@@ -1,5 +1,6 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 
-def members(request):
-    return HttpResponse('Hello Imran')
+def members_func(request):
+    template = loader.get_template('imran.html')
+    return HttpResponse(template.render())
