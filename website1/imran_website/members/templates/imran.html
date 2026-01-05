@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imran's Members Page</title>
-    
-</head>
-<body>
-    <h1>Members</h1>
+{% extends 'master.html' %}
 
-    <ul>
-        {% for x in mymembers %}
-            <li>
-                <a href="details/{{x.id}}">
-                    {{x.first_name}} {{x.last_name}}
-                </a>
-                
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% block title %}
+List of Users
+{% endblock %}
+
+{% block content %}
+<h1>
+    Users
+</h1>
+
+<ul>
+
+    {% for user in mymembers %}
+    <a href="details/{{user.id}}">
+        <li>
+            {{user.first_name}}
+            {{user.last_name}}
+        </li><br>
+    </a>
+
+    {% endfor %}
+
+</ul>
+{% endblock %}
