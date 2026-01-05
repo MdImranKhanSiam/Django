@@ -7,17 +7,17 @@
     
 </head>
 <body>
-    <header>
-        <h1>Welcome to Imran's Members Page</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Member Information</h2>
-            <p>This page is dedicated to the members of Imran's community.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Imran's Website</p>
-    </footer>
+    <h1>Members</h1>
+
+    <ul>
+        {% for x in mymembers %}
+            <li>
+                <a href="details/{{x.id}}">
+                    {{x.first_name}} {{x.last_name}}
+                </a>
+                
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
