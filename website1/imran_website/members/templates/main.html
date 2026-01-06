@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+
+{% block title %}
+    The Club
+{% endblock %}
+
+{% block content %}
+    <h1>
+        My Club
+    </h1>
+
+    <h3>
+        Members
+    </h3>
+
+    <p>
+        Check out all our 
+
+        <a href="members/">
+            Members
+        </a>
+    </p>
+
+    <p>
+        Device: {{user_agent}}
+        <br>
+        Ip: {{ip_address}}
+    </p>
+{% endblock %}
