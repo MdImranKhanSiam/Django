@@ -26,4 +26,20 @@
         <br>
         Ip: {{ip_address}}
     </p>
+
+    <p>
+        <a href="admin">
+            Admin Panel
+        </a>
+    </p>
+
+    {% with Age="25" %}
+        <p>
+            Your age is {{Age}} today {% now "d-m-Y" %}
+        </p>
+    {% endwith %}
+
+    
+    
+
 {% endblock %}

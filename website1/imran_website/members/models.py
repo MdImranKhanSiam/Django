@@ -8,6 +8,6 @@ class Member(models.Model):
 
     
 
-    def __str__(self):
-        return f"First Name: {self.first_name} {self.last_name}\nPhone: {self.phone}\nJoined Date: {self.joined_date}"
+    # def __str__(self):
+    #     return f"{self.first_name} {self.last_name}"
     
