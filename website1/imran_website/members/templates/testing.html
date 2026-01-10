@@ -11,8 +11,46 @@
     </h1>
 
     <p>
+    Device: {{user_agent}}
+    <br>
+    Ip: {{ip_address}}
+</p>
+
+<p>
+    <a href="admin">
+        Admin Panel
+    </a>
+</p>
+
+<p>
+    Your age is {{Age}} today {% now "d-m-Y" %}
+</p>
+<p>
+    Tomorrow it's {{ Age|add:"1"}}
+</p>
+
+<p>
+    <button onclick="alert('{{Name|escapejs}}')">
+        Name
+    </button>
+</p>
+
+<p>
+    Fruits: {{Fruits|json_script:"Fruits"}}
+</p>
+
+
+    <p>
         {{fruits.2}}
     </p>
+
+    <p>
+        Number: {{Number}}
+    </p>
+
+    <ul>
+        {{Users|unordered_list}}
+    </ul>
 
 </body>
 </html>

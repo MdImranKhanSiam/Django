@@ -1,45 +1,33 @@
 {% extends "master.html" %}
 
 {% block title %}
-    The Club
+The Club
 {% endblock %}
 
 {% block content %}
-    <h1>
-        My Club
-    </h1>
+<h1>
+    My Club
+</h1>
 
-    <h3>
+<h3>
+    Members
+</h3>
+
+<p>
+    Check out all our
+
+    <a href="members/">
         Members
-    </h3>
+    </a>
+</p>
 
-    <p>
-        Check out all our 
 
-        <a href="members/">
-            Members
-        </a>
-    </p>
+<p>
+    <a href="admin">
+        Admin Panel
+    </a>
+</p>
 
-    <p>
-        Device: {{user_agent}}
-        <br>
-        Ip: {{ip_address}}
-    </p>
 
-    <p>
-        <a href="admin">
-            Admin Panel
-        </a>
-    </p>
-
-    {% with Age="25" %}
-        <p>
-            Your age is {{Age}} today {% now "d-m-Y" %}
-        </p>
-    {% endwith %}
-
-    
-    
 
 {% endblock %}

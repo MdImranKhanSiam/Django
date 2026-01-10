@@ -13,7 +13,7 @@ List of Users
 
     {% for user in mymembers %}
     <a href="details/{{user.id}}">
-        <li>
+        <li style="color: {% cycle 'red' 'green' 'blue' 'yellow' %}">
             {{user.first_name}}
             {{user.last_name}}
         </li><br>
