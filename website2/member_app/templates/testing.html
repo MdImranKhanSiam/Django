@@ -1,0 +1,94 @@
+{% extends "master.html" %}
+
+{% block title %}
+Test Site
+{% endblock %}
+
+{% block content %}
+<h1>
+    Test Site
+</h1>
+
+<p>
+    Device: {{user_agent}}
+    <br>
+    Ip: {{ip_address}}
+</p>
+
+<p>
+    <a href="admin">
+        Admin Panel
+    </a>
+</p>
+
+<p>
+    Your age is {{Age}} today {% now "d-m-Y" %}
+</p>
+<p>
+    Tomorrow it's {{ Age|add:"1"}}
+</p>
+
+<p>
+    <button onclick="alert('{{Name|escapejs}}')">
+        Name
+    </button>
+</p>
+
+<p>
+    Fruits: {{Fruits|json_script:"Fruits"}}
+</p>
+
+<p>
+    {{fruits.2}}
+</p>
+
+<p>
+    Number: {{Number}}
+</p>
+
+<ul>
+    {{Users|unordered_list}}
+</ul>
+
+<table border="1">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Joined Date
+        </th>
+    </tr>
+
+    {% for x in Users %}
+    <tr>
+        <td>
+            {{x.id}}
+        </td>
+        <td>
+            {{x.first_name}}
+        </td>
+        <td>
+            {{x.last_name}}
+        </td>
+        <td>
+            {{x.phone}}
+        </td>
+        <td>
+            {{x.joined_date}}
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
