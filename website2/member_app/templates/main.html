@@ -6,24 +6,58 @@ The Club
 
 {% block content %}
 
-<div class="main">
-    <h1>My Tennis Club</h1>
+<div class="container py-5">
 
-    <h3>Members</h3>
-  
-    <p>Check out all our <a href="members/">members</a></p>
-  </div>
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">🎾 My Tennis Club</h1>
+        <p class="lead text-muted mt-3">
+            Welcome to our official club management system
+        </p>
+    </div>
 
-<p>
-    <a href="admin">
-        Admin Panel
-    </a>
-    <br><br>
-    <a href="testing">
-        Testing Site
-    </a>
-</p>
+    <!-- Main Card -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-4">
 
+                <div class="card-body text-center p-5">
+                    <h3 class="fw-semibold mb-3">Members</h3>
+                    <p class="text-muted mb-4">
+                        View all registered club members and their details
+                    </p>
 
+                    <a href="members/"
+                       class="btn btn-primary btn-lg rounded-pill px-5">
+                        View Members
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="row justify-content-center text-center">
+        <div class="col-md-6">
+
+            <div class="d-flex justify-content-center gap-4">
+
+                <a href="admin"
+                   class="btn btn-outline-dark rounded-pill px-4">
+                    🛠 Admin Panel
+                </a>
+
+                <a href="testing"
+                   class="btn btn-outline-secondary rounded-pill px-4">
+                    🧪 Testing Site
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}

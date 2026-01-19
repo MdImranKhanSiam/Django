@@ -19,8 +19,8 @@ def members_func(request):
 #     }
 #     return HttpResponse(template.render(context, request))
 
-def details_func(request, id):
-    mymember = get_object_or_404(Member, id=id)
+def details_func(request, slug):
+    mymember = get_object_or_404(Member, slug=slug)
     context = {
         'mymember': mymember,
     }

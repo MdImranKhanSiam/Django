@@ -5,19 +5,69 @@ List of Users
 {% endblock %}
 
 {% block content %}
-<h1>
-    Users
-</h1>
 
-<div class="mycard">
-    <h1>Members</h1>
-    <ul>
-      {% for x in mymembers %}
-        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.first_name }} {{ x.last_name }}</li>
-      {% endfor %}
-    </ul>
-  </div>
+<div class="container py-5">
 
+    <!-- Page Heading -->
+    <div class="text-center mb-4">
+        <h1 class="fw-bold">👥 Users</h1>
+        <p class="text-muted">Click on a member to view details</p>
+    </div>
 
+    <!-- Card Wrapper -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                
+                <!-- Header -->
+                <div class="card-header text-center text-white rounded-top-4"
+                     style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <h4 class="mb-0">Members</h4>
+                </div>
+
+                <!-- Body -->
+                <div class="card-body p-4">
+
+                    <ul class="list-unstyled m-0">
+
+                        {% for x in mymembers %}
+                            <li
+                                class="member-item d-flex justify-content-between align-items-center
+                                       mb-3 px-4 py-3 rounded-3 shadow-sm"
+                                onclick="window.location = 'details/{{ x.slug }}'">
+                                
+                                <span class="fw-semibold">
+                                    {{ x.first_name }} {{ x.last_name }}
+                                </span>
+
+                                <span class="badge bg-primary rounded-pill">
+                                    View →
+                                </span>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Small custom styling -->
+<style>
+    .member-item {
+        background-color: #f8f9fa;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .member-item:hover {
+        background-color: #e9ecef;
+        transform: translateY(-4px);
+    }
+</style>
 
 {% endblock %}

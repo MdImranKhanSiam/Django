@@ -1,29 +1,88 @@
-{% load static %}
-
+{% load django_bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %} 
-        {% endblock %} 
-    </title>
-    <link rel="stylesheet" href="{% static 'global.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <style>
+        body {
+            padding-top: 80px; /* space for fixed navbar */
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Gradient Navbar */
+        .navbar-custom {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #ffd700;
+        }
+
+        .btn-cta {
+            background: #ffd700;
+            color: #333;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            background: #ffc107;
+            transform: scale(1.05);
+            color: #000;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="topnav">
-        <a href="/">
-            HOME
-        </a>
-        <a href="/members">
-            MEMBERS
-        </a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">🎾 My Tennis Club</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/members">Members</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/testing">Testing</a>
+                </li>
+            </ul>
+
+            <a href="/members" class="btn btn-cta ms-lg-3 d-none d-lg-inline-block">View Members</a>
+        </div>
     </div>
-    
+</nav>
+
+<!-- Content -->
+<div class="container">
     {% block content %}
     {% endblock %}
+</div>
 
 </body>
 </html>
